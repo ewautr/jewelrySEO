@@ -1,0 +1,633 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Helvetica Neue', sans-serif; }
+  @media (min-width: 600px) {
+    html {
+      font-size: 93.75%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem; }
+
+@font-face {
+  font-family: Champagne;
+  src: url(fonts/champagne-bold.ttf); }
+
+.font-champagne {
+  font-family: Champagne, sans-serif; }
+
+.font-poiret {
+  font-family: 'Poiret One', cursive; }
+
+.heading-primary {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #5D5D5D;
+  border-bottom: 1px solid #EEECEC;
+  margin-top: 3rem; }
+
+.heading-secondary {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #CBCBCB; }
+
+.heading-tertiary {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #CBCBCB;
+  border-bottom: 1px solid #ebebeb; }
+
+.paragraph {
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #838383;
+  hyphens: auto; }
+  @media (min-width: 600px) {
+    .paragraph {
+      font-size: 1.3rem; } }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+.active {
+  text-decoration: underline; }
+
+.top-bar {
+  background-color: #EEECEC;
+  width: 100%;
+  height: 3rem; }
+  .top-bar__desktop-menu {
+    display: none;
+    position: absolute;
+    right: 4rem;
+    top: 4rem; }
+    @media (min-width: 600px) {
+      .top-bar__desktop-menu {
+        display: inline-block; } }
+    .top-bar__desktop-menu a {
+      font-weight: 400;
+      color: #5D5D5D;
+      opacity: .7; }
+    .top-bar__desktop-menu a:not(:last-of-type) {
+      margin-right: 2rem; }
+    .top-bar__desktop-menu a:hover {
+      opacity: 1; }
+  .top-bar__logo {
+    width: 7rem;
+    display: inline-block;
+    padding: .7rem;
+    transform: translateY(-2rem);
+    opacity: .7; }
+  .top-bar__burger-menu {
+    position: absolute;
+    right: 4rem;
+    top: 3.5rem;
+    text-align: right;
+    z-index: 100000000;
+    text-transform: capitalize; }
+    @media (min-width: 600px) {
+      .top-bar__burger-menu {
+        display: none; } }
+    .top-bar__burger-menu-icon {
+      text-align: right; }
+      .top-bar__burger-menu-icon img {
+        width: 2rem;
+        height: 2rem;
+        opacity: .5;
+        text-align: right; }
+  .top-bar__menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 10000; }
+    @media (min-width: 600px) {
+      .top-bar__menu {
+        display: none; } }
+    .top-bar__menu-links {
+      width: 22rem;
+      height: 25rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: right;
+      padding: 2rem; }
+      .top-bar__menu-links a {
+        display: block;
+        font-size: 3rem;
+        color: #5D5D5D;
+        border-bottom: 1px solid #EEECEC; }
+      .top-bar__menu-links a:not(:last-of-type) {
+        margin-bottom: 2rem; }
+
+.text-box {
+  background-color: #ebebeb; }
+  @media (min-width: 600px) {
+    .text-box {
+      width: 28rem;
+      margin: auto; } }
+  .text-box__heading {
+    font-size: 2.2rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transform: translateY(-1.3rem); }
+    @media (min-width: 600px) {
+      .text-box__heading {
+        display: block;
+        width: 100rem;
+        transform: translate(-12rem, -3rem);
+        font-size: 4.4rem; } }
+  .text-box__par {
+    padding: 1.5rem;
+    padding-top: 0;
+    margin-top: -1rem; }
+
+.footer {
+  width: calc(100vw - 6rem);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "logo text text";
+  align-items: center;
+  justify-items: center;
+  background-color: #EEECEC; }
+  @media (min-width: 600px) {
+    .footer {
+      grid-template-columns: 45% 55%;
+      grid-template-areas: "logo text"; } }
+  .footer__logo {
+    grid-area: logo;
+    width: 7rem;
+    opacity: .7;
+    justify-self: left;
+    margin-left: 1rem; }
+    @media (min-width: 600px) {
+      .footer__logo {
+        justify-self: right; } }
+    .footer__logo-img {
+      width: 100%; }
+  .footer__text {
+    grid-area: text; }
+    @media (min-width: 600px) {
+      .footer__text {
+        justify-self: left; } }
+    .footer__text h2 {
+      display: inline-block;
+      color: #5D5D5D;
+      font-weight: 300;
+      border-right: 1px solid #5D5D5D;
+      padding-right: .5rem;
+      margin-right: .5rem; }
+    .footer__text-icon {
+      width: 1.5rem;
+      margin-right: .5rem; }
+    .footer__text .paragraph {
+      font-size: 1.3rem; }
+
+.index .background-wrapper {
+  background-image: url(../img/index-img.jpg);
+  background-size: cover;
+  background-position: center;
+  width: calc(100vw - 6rem);
+  height: calc(100vh - 6rem);
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  @media (min-width: 600px) {
+    .index .background-wrapper {
+      width: 23rem;
+      height: 33rem; } }
+  .index .background-wrapper .header {
+    width: 10rem;
+    display: inline-block;
+    float: right;
+    transform: translateY(2rem); }
+    .index .background-wrapper .header .top-bar__logo {
+      width: 100%; }
+  .index .background-wrapper .navigation {
+    position: absolute;
+    top: 65%;
+    left: 30%;
+    transform: translate(-50%, -50%); }
+    @media (min-width: 600px) {
+      .index .background-wrapper .navigation {
+        top: 90%;
+        left: 50%;
+        width: 36rem;
+        text-align: center; } }
+    .index .background-wrapper .navigation__item {
+      list-style: none;
+      margin-bottom: .2rem;
+      border-bottom: 1px solid #fff; }
+      @media (min-width: 600px) {
+        .index .background-wrapper .navigation__item {
+          display: block;
+          border-bottom: none;
+          text-align: left; } }
+    .index .background-wrapper .navigation__link {
+      font-size: 3rem;
+      color: #EEECEC; }
+      @media (min-width: 600px) {
+        .index .background-wrapper .navigation__link {
+          color: #000;
+          border: none;
+          transition: all .5s; } }
+    @media (min-width: 600px) {
+      .index .background-wrapper .navigation__link:hover {
+        color: #5D5D5D;
+        text-shadow: none; } }
+
+.meSoren main .video-box {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  position: relative; }
+  .meSoren main .video-box__background {
+    display: block;
+    margin: auto;
+    width: 24rem;
+    height: 33rem;
+    background-color: #ebebeb; }
+    @media (min-width: 600px) {
+      .meSoren main .video-box__background {
+        width: 26rem;
+        height: 34rem; } }
+  .meSoren main .video-box__video {
+    display: block;
+    width: 33rem;
+    height: 24rem;
+    position: absolute;
+    top: calc((33rem/2) - (24rem/2));
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (min-width: 600px) {
+      .meSoren main .video-box__video {
+        width: 41rem;
+        height: 26rem; } }
+    .meSoren main .video-box__video iframe {
+      width: 100%;
+      height: 100%; }
+
+.meSoren main .picture-box {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  position: relative; }
+  .meSoren main .picture-box__background {
+    display: block;
+    margin: auto;
+    width: 33rem;
+    height: 24rem;
+    background-color: #ebebeb; }
+  .meSoren main .picture-box__img {
+    width: 24rem;
+    position: absolute;
+    top: calc((24rem/2) - (33rem/2));
+    left: 50%;
+    transform: translateX(-50%); }
+
+.meSoren main .text-box__heading {
+  font-size: 3rem;
+  transform: translateY(-2rem); }
+  @media (min-width: 600px) {
+    .meSoren main .text-box__heading {
+      font-size: 4rem;
+      transform: translate(-6rem, -3rem); } }
+
+.myJewellery__heading {
+  text-align: center;
+  margin-bottom: 4rem; }
+  .myJewellery__heading-1 {
+    padding-bottom: .7rem; }
+  .myJewellery__heading-categories {
+    color: #CBCBCB;
+    font-size: 1.7rem;
+    padding-top: .5rem; }
+    .myJewellery__heading-categories a {
+      display: inline-block;
+      margin-left: 1rem;
+      transition: all .2s ease-in; }
+    .myJewellery__heading-categories a:hover,
+    .myJewellery__heading-categories a:active {
+      color: #5D5D5D;
+      transform: scale(1.1); }
+  .myJewellery__heading .navCatsK {
+    color: #5D5D5D; }
+
+.myJewellery main {
+  display: grid;
+  grid-template-columns: 15.7rem 15.7rem;
+  grid-gap: 2px;
+  width: calc(31.4rem + 2px);
+  margin: auto; }
+  @media (min-width: 600px) {
+    .myJewellery main {
+      grid-template-columns: 15.7rem 15.7rem 15.7rem;
+      width: calc(47.1rem + 4px); } }
+
+.myJewellery .template__img1 {
+  width: 15.7rem;
+  height: 15.7rem;
+  overflow: hidden;
+  position: relative; }
+  .myJewellery .template__img1:hover .template__moreInfo {
+    opacity: 1; }
+  .myJewellery .template__img1 .img1 {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.myJewellery .template__moreInfo {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 15.7rem;
+  height: 15.7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all .2s ease-out;
+  z-index: 1000; }
+  .myJewellery .template__moreInfo h3 {
+    display: inline-block;
+    margin: 1rem;
+    margin-left: 1rem; }
+    @media (min-width: 600px) {
+      .myJewellery .template__moreInfo h3 {
+        margin-left: 2rem;
+        margin: 1rem; } }
+  .myJewellery .template__moreInfo p {
+    font-weight: 300;
+    color: #CBCBCB;
+    margin: .2rem 1rem;
+    display: block; }
+    @media (min-width: 600px) {
+      .myJewellery .template__moreInfo p {
+        margin: .5rem 2rem; } }
+  .myJewellery .template__moreInfo .material {
+    text-align: right; }
+  .myJewellery .template__moreInfo .btn {
+    display: block;
+    width: 12rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 1.5rem; }
+    @media (min-width: 600px) {
+      .myJewellery .template__moreInfo .btn {
+        margin-top: 2rem; } }
+    .myJewellery .template__moreInfo .btn__link {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #CBCBCB;
+      border-bottom: 1px solid rgba(238, 236, 236, 0.5);
+      padding: .4rem 1rem;
+      background-color: rgba(255, 255, 255, 0.2); }
+
+.myJewellery aside {
+  max-width: calc(31.4rem + 2px);
+  margin: auto;
+  margin-bottom: 4rem; }
+  .myJewellery aside .paragraph {
+    border-top: 1px solid #EEECEC;
+    padding: 1rem 0; }
+  .myJewellery aside .paragraph:first-of-type {
+    margin-top: 4rem; }
+  .myJewellery aside .paragraph:last-of-type {
+    border-bottom: 1px solid #EEECEC; }
+  .myJewellery aside .contact-link {
+    font-weight: 400;
+    cursor: pointer; }
+  .myJewellery aside .custom {
+    font-weight: 400; }
+
+.contactMe main {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28rem;
+  height: 19rem;
+  background-image: url(../img/contact-bg.jpg);
+  background-blend-mode: lighten;
+  background-size: cover; }
+  @media (min-width: 600px) {
+    .contactMe main {
+      top: 45%;
+      width: 41rem;
+      height: 26rem; } }
+  .contactMe main .contact-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24rem;
+    height: 16rem;
+    background-color: rgba(238, 236, 236, 0.87); }
+    @media (min-width: 600px) {
+      .contactMe main .contact-box {
+        width: 37rem;
+        height: 22rem; } }
+    .contactMe main .contact-box__heading {
+      border: none;
+      margin-left: 1rem;
+      margin-top: 1rem; }
+      @media (min-width: 600px) {
+        .contactMe main .contact-box__heading {
+          margin-top: 4rem;
+          margin-left: 3.5rem; } }
+    .contactMe main .contact-box__list {
+      list-style: none;
+      margin-left: 1rem; }
+      @media (min-width: 600px) {
+        .contactMe main .contact-box__list {
+          margin-left: 3.5rem;
+          font-size: 1.3rem;
+          opacity: .6; } }
+      .contactMe main .contact-box__list-icon {
+        width: 2rem;
+        height: 2rem;
+        margin: .5rem;
+        transform: translateY(1rem); }
+
+.contactMe .background {
+  display: block;
+  margin: auto;
+  width: 19rem;
+  height: 28rem;
+  background-color: #ebebeb;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; }
+  @media (min-width: 600px) {
+    .contactMe .background {
+      width: 26rem;
+      height: 34rem;
+      top: 45%; } }
+
+.contactMe .footer {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem; }
+
+.howIwork__heading {
+  text-align: center;
+  margin-bottom: 8rem; }
+  @media (min-width: 600px) {
+    .howIwork__heading {
+      text-align: center; }
+      .howIwork__heading-1 {
+        display: block; }
+      .howIwork__heading-2 {
+        display: block;
+        font-weight: 100; } }
+
+.howIwork .process {
+  display: grid;
+  margin: auto;
+  margin-bottom: 4rem;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 3rem;
+  grid-template-areas: "pic1 ..." "n1 text1" "pic2 ..." "n2 text2" "pic3 ..." "n3 text3"; }
+  @media (min-width: 600px) {
+    .howIwork .process {
+      width: 80%;
+      margin: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "text1 pic1 ..." "text1 pic2 text2" "text3 pic3 text2" "text3 ... ...";
+      justify-items: center;
+      grid-row-gap: 10rem;
+      grid-column-gap: 3rem; } }
+  .howIwork .process__pic {
+    width: 15rem;
+    height: 15rem; }
+    .howIwork .process__pic-1 {
+      grid-area: pic1; }
+    .howIwork .process__pic-2 {
+      grid-area: pic2; }
+    .howIwork .process__pic-3 {
+      grid-area: pic3; }
+    .howIwork .process__pic-4 {
+      grid-area: pic4; }
+  .howIwork .process .text-box-1 {
+    grid-area: text1; }
+  .howIwork .process .text-box-2 {
+    grid-area: text2; }
+  .howIwork .process .text-box-3 {
+    grid-area: text3; }
+  .howIwork .process .text-box-4 {
+    grid-area: text4; }
+  @media (min-width: 600px) {
+    .howIwork .process .text-box {
+      width: 15.6rem; }
+      .howIwork .process .text-box__heading {
+        transform: translate(0, -2.3rem);
+        width: 20rem;
+        font-size: 3.5rem; } }
+  .howIwork .process .number {
+    justify-self: center; }
+    @media (min-width: 600px) {
+      .howIwork .process .number {
+        display: none; } }
+    .howIwork .process .number-1 {
+      grid-area: n1; }
+    .howIwork .process .number-2 {
+      grid-area: n2; }
+    .howIwork .process .number-3 {
+      grid-area: n3; }
+    .howIwork .process .number-4 {
+      grid-area: n4; }
+
+.howIwork .background {
+  width: 6rem;
+  height: 120rem;
+  background-color: #EEECEC;
+  z-index: -1;
+  position: absolute;
+  top: 20rem;
+  left: calc(3rem + (15rem/2) - (6rem/2)); }
+  @media (min-width: 600px) {
+    .howIwork .background {
+      position: absolute;
+      top: 20rem;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 70rem; } }
+
+.details__main {
+  width: calc(100vw - 6rem); }
+  @media (min-width: 600px) {
+    .details__main {
+      width: 70%;
+      max-width: 50rem;
+      margin: auto; } }
+  .details__main-photo {
+    width: 100%;
+    height: 21rem;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    margin-top: 4rem; }
+    @media (min-width: 600px) {
+      .details__main-photo {
+        height: 27rem; } }
+  .details__main-img {
+    display: block;
+    display: block;
+    width: 600%;
+    max-width: 50rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .details__main-text {
+    margin-bottom: 4rem; }
+    .details__main-text h1 {
+      font-weight: 400;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      margin-top: 3rem; }
+    .details__main-text .price,
+    .details__main-text .material,
+    .details__main-text .kind {
+      font-weight: 400; }
+  .details__main-info .paragraph {
+    margin: 3rem 0; }
+  .details__main-info .btn {
+    width: 10rem;
+    height: 4rem;
+    background-color: rgba(238, 236, 236, 0.3);
+    outline: 5px solid #EEECEC;
+    outline-offset: 5px;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+    position: relative; }
+    .details__main-info .btn__link {
+      color: #5D5D5D;
+      font-weight: 300;
+      font-size: 2rem;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
